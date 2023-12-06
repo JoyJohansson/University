@@ -15,4 +15,18 @@ SELECT * FROM Student WHERE branch_id IS NULL;
 
 •	Och så vidare..
 
+CREATE VIEW finished_courses AS (
+    SELECT student_social_security_number, course_code, grade_id 
+    FROM university.Student_completed_courses
+    LEFT JOIN university.courses 
+    ON university.courses.code = university.Student_completed_courses.course_code);
 
+DROP VIEW finished_courses;
+SELECT * FROM finished_courses;
+    LEFT JOIN categories ON products.category_id = categories.category_id;
+
+CREATE VIEW finished_courses AS (
+SELECT student_social_security_number, course_code, grade_id, credits 
+FROM university.Student_completed_courses
+LEFT JOIN university.courses
+ON university.courses.code = university.Student_completed_courses.course_code);

@@ -189,7 +189,6 @@ CREATE TABLE IF NOT EXISTS university.Courses_classification (
     PRIMARY KEY (course_code, classification_id)
 );
 
-
 CREATE TABLE IF NOT EXISTS university.Student_completed_courses(
   student_social_security_number VARCHAR(10),
   FOREIGN KEY (student_social_security_number) REFERENCES university.Students (social_security_number) ON DELETE CASCADE,
