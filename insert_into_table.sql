@@ -22,11 +22,11 @@ VALUES
 
 
 
-INSERT INTO university.program_branches (program_id, branch_name)
+INSERT INTO university.program_branches (program_id, branch_id)
 VALUES
-(1, 'Computer Linguistics'),
-(1, 'Algorithms'),
-(1, 'Computer Software technology');
+(1, 1),
+(1, 3),
+(1, 2);
 
 INSERT INTO university.Classifications (name)
 VALUES
@@ -50,7 +50,7 @@ VALUES
 
 INSERT INTO university.Prerequisites_courses (course_code, prerequisite_code)
 VALUES
-  ('CS101', 'CS100'),
+  ('CS101', 'CS110'),
   ('CS102', 'CS101'),
   ('CS103', 'CS102'),
   ('CS104', 'CS103'),
@@ -66,7 +66,7 @@ VALUES
   ('CS104', 10);
 
 
-INSERT INTO university.Grades (grade_symbol, grade_description)
+INSERT INTO university.Grades (symbol, grade_description)
 VALUES 
   ('5', 'Excellent'),
   ('4', 'Good'),
@@ -125,14 +125,9 @@ VALUES
   (1, 'CS104');
 
 
-
-
-
-
-
 INSERT INTO university.Courses_classification (course_code, classification_id)
 VALUES
-('CS100', '1'),
+('CS102', '1'),
 ('CS101', '2');
 
 
