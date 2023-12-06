@@ -14,7 +14,7 @@ VALUES
 (1, 1),
 (1, 2);
 
-INSERT INTO university.Branches (name, Recommended_cources_requirment_minimum, program_id)
+INSERT INTO university.Branches (name, Recommended_courses_requirment_minimum, program_id)
 VALUES
 ('Computer Linguistics', 1, 1),
 ('Algorithms', 2, 1),
@@ -80,7 +80,7 @@ VALUES
   ('CS101', 20),
   ('CS102', 20),
   ('CS103', 20),
-  ('CS104', 10),
+  ('CS104', 10);
 
 INSERT INTO university.Grades (symbol, grade_description)
 VALUES 
@@ -89,6 +89,13 @@ VALUES
   ('3', 'Pass'),
   ('U', 'Fail');
 
+  
+INSERT INTO university.Students (social_security_number, name, program_id, branch_id, current_year, current_term, earned_credits)
+  VALUES
+  ('1234567890', '<NAME>', 1, 1, 2021, 1, 10),
+  ('1234567891', '<NAME>', 1, 1, 2021, 1, 10),
+  ('1234567892', '<NAME>', 1, 1, 2021, 1, 10);
+
 INSERT INTO university.Student_course_registrations (student_social_security_number, course_code)
 VALUES
   ('1234567890', 'CS101'),
@@ -96,14 +103,6 @@ VALUES
   ('1234567890', 'CS103'),
   ('1234567890', 'CS104');
 
-
-INSERT INTO university.Students (social_security_number, name, program_id, branch_id, current_year, current_term, earned_credits)
-  VALUES
-  ('1234567890', '<NAME>', 1, 1, 2021, 1, 10),
-  ('1234567891', '<NAME>', 1, 1, 2021, 1, 10),
-  ('1234567892', '<NAME>', 1, 1, 2021, 1, 10);
-  
-  
 
 INSERT INTO university.Waitlist (student_social_security_number)
 VALUES
@@ -147,6 +146,6 @@ VALUES
 ('CS101', 2);
 
 
-INSERT INTO TABLE university.Student_completed_courses(student_social_security_number,course_code, grade_id, completed_date)
+INSERT INTO university.Student_completed_courses(student_social_security_number,course_code, grade_id)
 VALUES
-();
+((SELECT social_security_number FROM university.Students LIMIT 1), (SELECT code FROM university.courses LIMIT 1), 1);
