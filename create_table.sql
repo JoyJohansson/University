@@ -102,11 +102,13 @@ CREATE TABLE IF NOT EXISTS university.Limited_courses (
     FOREIGN KEY (waitlist_id) REFERENCES university.Waitlist (id) ON DELETE CASCADE
 );
 
+'''
+DROP TABLE university.grades CASCADE;
+'''
 
 CREATE TABLE IF NOT EXISTS university.Grades (
-    id SERIAL PRIMARY KEY,
-    symbol VARCHAR(1) NOT NULL,
-    grade_description VARCHAR(255) NOT NULL
+    symbol VARCHAR(1) PRIMARY KEY,
+    description VARCHAR(255) NOT NULL
 );
 
 
@@ -120,9 +122,6 @@ CREATE TABLE IF NOT EXISTS university.Student_course_registrations (
     registration_date DATE DEFAULT CURRENT_DATE
 );
 
-  
-<<<<<<< HEAD
-=======
   CREATE TABLE IF NOT EXISTS university.Waitlist (
     id SERIAL PRIMARY KEY,
     course_code VARCHAR(6) NOT NULL,
@@ -131,7 +130,6 @@ CREATE TABLE IF NOT EXISTS university.Student_course_registrations (
     FOREIGN KEY (student_social_security_number) REFERENCES university.Students (social_security_number) ON DELETE CASCADE
     registration_date DATE DEFAULT CURRENT_DATE,
 );
->>>>>>> 8b32cff351b69ffffa67cb65e1dfd0e00fc7a5d7
 
 
 CREATE TABLE IF NOT EXISTS university.Study_administrators (
@@ -189,14 +187,18 @@ CREATE TABLE IF NOT EXISTS university.Courses_classification (
     PRIMARY KEY (course_code, classification_id)
 );
 
+'''
+DROP TABLE university.student_completed_courses CASCADE;
+'''
+
 CREATE TABLE IF NOT EXISTS university.Student_completed_courses(
   student_social_security_number VARCHAR(10),
   FOREIGN KEY (student_social_security_number) REFERENCES university.Students (social_security_number) ON DELETE CASCADE,
   course_code VARCHAR(6),
   FOREIGN KEY (course_code) REFERENCES university.Courses (code) ON DELETE CASCADE,
   PRIMARY KEY (student_social_security_number, course_code),
-  grade_id INT,
-  FOREIGN KEY (grade_id) REFERENCES university.Grades (id) ON DELETE CASCADE,
+  grade VARCHAR,
+  FOREIGN KEY (grade) REFERENCES university.Grades (symbol) ON DELETE CASCADE,
   completed_date DATE DEFAULT CURRENT_DATE
 );
 

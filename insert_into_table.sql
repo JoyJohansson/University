@@ -82,7 +82,7 @@ VALUES
   ('CS103', 20),
   ('CS104', 10);
 
-INSERT INTO university.Grades (symbol, grade_description)
+INSERT INTO university.Grades (symbol, description)
 VALUES 
   ('5', 'Excellent'),
   ('4', 'Good'),
@@ -145,7 +145,7 @@ VALUES
 ('CS101',1),
 ('CS101', 2);
 
-
-INSERT INTO university.Student_completed_courses(student_social_security_number,course_code, grade_id)
+INSERT INTO university.Student_completed_courses(student_social_security_number,course_code, grade)
 VALUES
-((SELECT social_security_number FROM university.Students LIMIT 1), (SELECT code FROM university.courses LIMIT 1), 1);
+((SELECT social_security_number FROM university.Students LIMIT 1), (SELECT code FROM university.courses LIMIT 1), '5'),
+((SELECT social_security_number FROM university.Students ORDER BY social_security_number DESC LIMIT 1), (SELECT code FROM university.courses LIMIT 1), 'U');
