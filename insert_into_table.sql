@@ -142,7 +142,7 @@ VALUES
 
 INSERT INTO university.Courses_classification (course_code, classification_id)
 VALUES
-('CS100',1),
+('CS101',1),
 ('CS101', 2);
 
 
