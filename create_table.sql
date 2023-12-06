@@ -113,9 +113,9 @@ CREATE TABLE IF NOT EXISTS Students (
   
   CREATE TABLE IF NOT EXISTS university.Waitlist (
     id SERIAL PRIMARY KEY,
-    course_code VARCHAR(6),
+    course_code VARCHAR(6) NOT NULL,
     FOREIGN KEY (course_code) REFERENCES university.Limited_courses (course_code) ON DELETE CASCADE,
-    student_social_security_number VARCHAR(10),
+    student_social_security_number VARCHAR(10) NOT NULL,
     FOREIGN KEY (student_social_security_number) REFERENCES university.Students (social_security_number) ON DELETE CASCADE
     registration_date DATE DEFAULT CURRENT_DATE,
 );
