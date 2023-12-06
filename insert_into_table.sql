@@ -14,11 +14,6 @@ VALUES
 (1, 1),
 (1, 2);
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8b32cff351b69ffffa67cb65e1dfd0e00fc7a5d7
 INSERT INTO university.Branches (name, Recommended_cources_requirment_minimum, program_id)
 VALUES
 ('Computer Linguistics', 1, 1),
@@ -32,9 +27,6 @@ VALUES
 (1, 1),
 (1, 3),
 (1, 2);
-
-<<<<<<< HEAD
-
 
 INSERT INTO university.Courses (code, name, institution_id, credits, classification_id, grade_ceiling)
 VALUES
@@ -55,7 +47,6 @@ VALUES
   ('CS115', 'Software Quality Assurance', 1, 3, 1, 4),
   ('CS116', 'Software Maintenance', 1, 3, 1, 4);
   
-=======
 INSERT INTO university.Classifications (name)
 VALUES
   ('Undergraduate'),
@@ -74,9 +65,6 @@ VALUES
   ('CS109', 'Artificial Intelligence', 1, 3, 1, 4),
   ('CS110', 'Computer Vision', 1, 3, 1, 4);
 
->>>>>>> 8b32cff351b69ffffa67cb65e1dfd0e00fc7a5d7
-
-
 INSERT INTO university.Prerequisites_courses (course_code, prerequisite_code)
 VALUES
   ('CS101', 'CS110'),
@@ -92,12 +80,7 @@ VALUES
   ('CS101', 20),
   ('CS102', 20),
   ('CS103', 20),
-<<<<<<< HEAD
   ('CS104', 10),
-=======
-  ('CS104', 10);
->>>>>>> 8b32cff351b69ffffa67cb65e1dfd0e00fc7a5d7
-
 
 INSERT INTO university.Grades (symbol, grade_description)
 VALUES 
@@ -160,13 +143,8 @@ VALUES
 
 INSERT INTO university.Courses_classification (course_code, classification_id)
 VALUES
-<<<<<<< HEAD
 ('CS100',1),
 ('CS101', 2);
-=======
-('CS102', '1'),
-('CS101', '2');
->>>>>>> 8b32cff351b69ffffa67cb65e1dfd0e00fc7a5d7
 
 
 INSERT INTO TABLE university.Student_completed_courses(student_social_security_number,course_code, grade_id, completed_date)
