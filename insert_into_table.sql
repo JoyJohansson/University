@@ -19,7 +19,6 @@ VALUES
 
 
 
-
 INSERT INTO university.Branches (name, Recommended_cources_requirment_minimum, program_id)
 VALUES
 (Computer Linguistics, 1, 1),
@@ -36,19 +35,25 @@ VALUES
 
 
 
-INSERT INTO university.Courses (code, name, institution_id, credits, classification_ids, grade_ceiling)
+INSERT INTO university.Courses (code, name, institution_id, credits, classification_id, grade_ceiling)
 VALUES
-  ('CS101', 'Introduction to Computer Science', 1, 3, ARRAY[1, 2], 4),
-  ('CS102', 'Data Structures', 1, 3, ARRAY[1, 2], 4),
-  ('CS103', 'Computer Architecture', 1, 3, ARRAY[1, 2], 4),
-  ('CS104', 'Operating Systems', 1, 3, ARRAY[1, 2], 4),
-  ('CS105', 'Database Systems', 1, 3, ARRAY[1, 2], 4),
-  ('CS106', 'Computer Networks', 1, 3, ARRAY[1, 2], 4),
-  ('CS107', 'Computer Graphics', 1, 3, ARRAY[1, 2], 4),
-  ('CS108', 'Computer Security', 1, 3, ARRAY[1, 2], 4),
-  ('CS109', 'Artificial Intelligence', 1, 3, ARRAY[1, 2], 4),
-  ('CS110', 'Computer Vision', 1, 3, ARRAY[1, 2], 4);
-
+  ('CS101', 'Introduction to Computer Science', 1, 3, 1, 4),
+  ('CS102', 'Data Structures', 1, 3, 1, 4),
+  ('CS103', 'Computer Programming', 1, 3, 1, 4),
+  ('CS104', 'Object Oriented Programming', 1, 3, 1, 4),
+  ('CS105', 'Operating Systems', 1, 3, 1, 4),
+  ('CS106', 'Database Management Systems', 1, 3, 1, 4),
+  ('CS107', 'Computer Networks', 1, 3, 1, 4),
+  ('CS108', 'Software Engineering', 1, 3, 1, 4),
+  ('CS109', 'Computer Graphics', 1, 3, 1, 4),
+  ('CS110', 'Computer Security', 1, 3, 1, 4),
+  ('CS111', 'Artificial Intelligence', 1, 3, 1, 4),
+  ('CS112', 'Computer Architecture', 1, 3, 1, 4),
+  ('CS113', 'Software Testing', 1, 3, 1, 4),
+  ('CS114', 'Software Project Management', 1, 3, 1, 4),
+  ('CS115', 'Software Quality Assurance', 1, 3, 1, 4),
+  ('CS116', 'Software Maintenance', 1, 3, 1, 4);
+  
 
 
 INSERT INTO university.Prerequisites_courses (course_code, prerequisite_code)
@@ -65,7 +70,7 @@ VALUES
   ('CS101', 20),
   ('CS102', 20),
   ('CS103', 20),
-  ('CS104', NULL),
+  ('CS104', 10),
 
 
 INSERT INTO university.Grades (grade_symbol, grade_description)
@@ -142,8 +147,8 @@ VALUES
 
 INSERT INTO university.Courses_classification (course_code, classification_id)
 VALUES
-('CS100', '1'),
-('CS101', '2');
+('CS100',1),
+('CS101', 2);
 
 
 INSERT INTO TABLE university.Student_completed_courses(student_social_security_number,course_code, grade_id, completed_date)
